@@ -112,7 +112,7 @@ class FlightArea {
             if (all_matches.every(flag => flag === true)) {
                 swal.fire({
                     title: 'Congratulations',
-                    text: 'You avoid all thunders and safety reach destination!'
+                    text: 'You avoid all thunders and safetly reach destination!'
                 })
                 this.show_message('WINNER!', 'alert-success')
                 this.show_thunders()

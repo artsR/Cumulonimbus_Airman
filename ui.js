@@ -60,7 +60,7 @@ class FlightArea {
     }
 
     check_clicked_cell(clicked_cell) {
-        /**Checks and displays weather of clicked cell.*/
+        /**Informs about weather around clicked cell.*/
         let cell_id = parseInt(clicked_cell.dataset.id)
         let cell_weather = this.shuffled_cells[cell_id]
 
@@ -99,7 +99,7 @@ class FlightArea {
     }
 
     is_winner() {
-        /**Verifies if all 'thunders' were 'flaged' and rest fields 'checked'.*/
+        /**Verifies if all 'thunders' were 'flaged' correctly.*/
         if (this.flags === this.thunders) {
             let all_matches = Array.from(
                 document.querySelectorAll('.flaged')
@@ -121,7 +121,7 @@ class FlightArea {
     }
 
     game_over(cell_weather, message) {
-        /**Manages scenario when user choses cell with 'thunder'. Game over.*/
+        /**Manages scenario when user chooses cell with 'thunder'. Game over.*/
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -157,7 +157,7 @@ class FlightArea {
     }
 
     display_legend() {
-        /**Generates leged for number of `thunders` around and plane color.*/
+        /**Generates legend for number of `thunders` around and plane color.*/
         const legendDiv = document.createElement('div')
         legendDiv.className = 'legend'
 

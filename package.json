@@ -1,0 +1,15 @@
+{
+  "name": "cumulonimbus_airman",
+  "version": "1.0.0",
+  "description": "minesweeper variation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "CodArt",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.2"
+  },
+  "dependencies": {}
+}

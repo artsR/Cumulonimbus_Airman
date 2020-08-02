@@ -1,0 +1,225 @@
+:root {
+    --size: 10;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background: #a8b3bf;
+    overflow: hidden;
+}
+/* title bar */
+header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    -webkit-app-region: drag;
+    background: #333;
+    color: #fff;
+}
+.window-action {
+    padding: 5px 15px;
+    -webkit-app-region: no-drag;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+.window-action:hover {
+    background: red;
+}
+.window-header {
+    padding: 5px 15px;
+    display: inline-flex;
+    align-items: center;
+}
+/* End title bar */
+/* main */
+div.container {
+    padding: 10px 0px;
+}
+div.container .clouds {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+div.container .clouds img {
+    position: absolute;
+    bottom: 0px;
+    max-width: 100%;
+    animation: animate calc(8s * var(--speed)) linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+div.main-panel {
+    margin: 50px 0 auto 0;
+    display: grid;
+    grid-template-areas:
+        "area info"
+        "area nav"
+        "area nav"
+        "area nav"
+        "area nav"
+        "area nav";
+    grid-gap: 10px;
+    justify-content: space-between;
+}
+/** Flight Area  */
+.flight-grid {
+    margin: 0 auto 0 100px;
+    padding: 10px;
+    grid-area: area;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 26px;
+    z-index: 10;
+}
+.flight-grid div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px double #fafafa;
+    background: #444;
+}
+.flight-grid div:hover {
+    border: 1px double #999;
+}
+.flight-grid div.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+.flight-grid div.sunny {
+    /* placholder */
+}
+.flight-grid div.thunder {
+    background-color: #777;
+    background-image: url(assets/weather/thunder_3.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+.flight-grid div.checked {
+    background: #ebf4ff;
+}
+.flight-grid div.flaged {
+    background-image: url(assets/weather/lighting.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.active {
+    background: #999;
+    transition: background .2 ease-in-out;
+}
+/** End Flight Area */
+/** info  */
+.info-panel {
+    margin-right: 30px;
+    grid-area: info;
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+    min-height: 50px;
+    align-items: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background: #444;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+.alert-success {
+    border-color: #3e3;
+    color: #393;
+}
+.alert-danger {
+    border-color: #e33;
+    color: #933;
+}
+/** End info  */
+/** nav */
+.nav-panel {
+    margin-right: 30px;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background: #444;
+}
+.nav-panel .legend {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 200px;
+    height: 20px;
+    color: #fff;
+}
+.nav-panel .legend div {
+    width: 100%;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+}
+.nav-panel #flight-area,
+.nav-panel #weather {
+    margin: 20px;
+    z-index: 10;
+}
+#weather ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#weather ul li {
+    list-style: none;
+}
+#weather img {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+#weather img:hover,
+#weather img.active {
+    background: #777;
+    cursor: pointer;
+}
+/** End nav */
+.btn {
+    margin: 30px;
+    width: 200px;
+    height: 30px;
+    background: #ebe134;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+.btn:hover {
+    background: #999100;
+    color: #fff;
+}
+button:focus {
+    outline: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./styles.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="window-action" id="close">&#x2716;</div>
+      <span class="window-header">Cumulonimbus Airman</span>
+    </header>
+    <div class="container">
+      <div class="main-panel">
+        <div class="flight-grid"></div>
+        <div class="info-panel"></div>
+        <div class="nav-panel">
+          <div id="weather">
+            <ul>
+              <li>
+                <img src="./assets/levels/weather1.svg" data-weather="0"/>
+              </li>
+              <li>
+                <img src="./assets/levels/weather2.svg" data-weather="1"/>
+              </li>
+              <li>
+                <img class="active" src="./assets/levels/weather3.svg" data-weather="2"/>
+              </li>
+              <li>
+                <img src="./assets/levels/weather4.svg" data-weather="3"/>
+              </li>
+            </ul>
+          </div>
+          <div id="flight-area">
+            <input type="range" name="size" step="1" min="2" max="20" value="10"
+              id="speedInputId" oninput="speedOutputId.value = speedInputId.value"/>
+            <output name="size" id="speedOutputId">10</output>
+          </div>
+          <div class="btn" id="new-game">New Game</div>
+        </div>
+      </div>
+      <div class="clouds">
+        <img src="./assets/clouds/cloud1.png" style="--speed:1;"/>
+        <img src="./assets/clouds/cloud2.png" style="--speed:2;"/>
+        <img src="./assets/clouds/cloud3.png" style="--speed:3;"/>
+        <img src="./assets/clouds/cloud4.png" style="--speed:4;"/>
+        <img src="./assets/clouds/cloud5.png" style="--speed:5;"/>
+      </div>
+    </div>
+    <script src="./ui.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>

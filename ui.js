@@ -249,6 +249,6 @@ class FlightArea {
     get_plane_color(thunders) {
         /**Determines plane color depending on number of thunders around.*/
         let idx = this.steps.findIndex(step => step >= thunders)
-        return this.colors[idx < 0 ? steps.length : idx]
+        return this.colors[idx < 0 ? this.steps.length : idx]
     }
 }

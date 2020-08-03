@@ -10,7 +10,7 @@ class FlightArea {
 
     create_board(size, thunders) {
         document.documentElement.style.setProperty('--size', size)
-        this.size = size
+        this.size = Math.max(3, size)
         this.thunders = thunders
         this.flags = 0
 

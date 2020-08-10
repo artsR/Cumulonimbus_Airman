@@ -1,7 +1,7 @@
 # Cumulonimbus Airman
 
 ## General Info
-The game was made using Electron (HTML, CSS, JS).
+The game was made using Electron(HTML, CSS, JS).
 
 I was inspired by [Ania Kubów project](https://github.com/kubowania/minesweeper).  
 

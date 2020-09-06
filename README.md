@@ -18,7 +18,7 @@ With `right click` you mark cell with storm.
 
 You can also choose difficulty level that is indicated by number of thunders:  
 ![Difficulty](./docs/difficulty_level.png)  
-and size of flight area:  
+and size of flight area (number<sup>2</sup> of cells in grid):  
 ![Area](./docs/size.png)  
 
 ![Overview](./docs/overview.gif)  

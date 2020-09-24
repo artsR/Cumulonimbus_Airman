@@ -10,6 +10,7 @@ The cloud moving animation: [Youtube](https://www.youtube.com/watch?v=FWW38GuIo7
 ## Usage
 ```
 git clone https://github.com/artsR/Cumulonimbus_Airman.git
+cd Cumulonimbus_Airman
 npm install
 npm start
 ```
